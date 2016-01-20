@@ -1,0 +1,14 @@
+table {
+  
+}
+p {
+  width:800px;
+  word-wrap:break-word;
+  font-size:24px;
+  padding: 0 0 0 20px;
+  
+}
+
+.hidden {
+  display:none;
+}
