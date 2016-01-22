@@ -1,10 +1,26 @@
+/*
+Features to add
+-unique by page so we can see the decline in new words per daf. --DONE! 
+-key word pickout -- Done!
+-collapse all similar words into one (issue with this one)
+-generate nice report at end 
+-pull out all roshei teivos -- Done!
+-twelve is the header text to remove when working with tzel harim -- DONE!
+-just trim until two whitespaces -- done!
+-how many unmatched words are left on the page
+----and what they are.
+-add a range selector for the pages using a dropdownlist with only headers and 
+indexes.
+
+*/
+
 var gList, fList;
 var tractate; // an array
 var TEMP;
 
 //main load and handling function
 $(document).ready(function(){
-  $("#gittin").load("Gittin_Complete_Text.html",function(){
+  $("#gittin").load("Text_Resources/Gittin_Complete_Text.html",function(){
      tractate = cleanup($(this).text()).split("\n");
      var temp = [];
      for(var i=0;i<tractate.length;i++){
@@ -14,11 +30,11 @@ $(document).ready(function(){
      }
      tractate = temp;
      
-    $("#keywords").load("KeyWords.html",function(){
+    $("#keywords").load("Text_Resources/KeyWords.html",function(){
       gList = $(this).text().split("|");
-      $("#frequency").load("frequency.html",function(){
+      $("#frequency").load("Text_Resources/frequency.html",function(){
       fList = $(this).text().split("|");
-      $("#gemarah").load("Gittin_Gemarah.html",function(){
+      $("#gemarah").load("Text_Resources/Gittin_Gemarah.html",function(){
       //var gm = cleanup($(this).text());
       
       
@@ -428,18 +444,3 @@ function rmSimilar(array){
   
   return a;
 }
-/*
-Features to add
--unique by page so we can see the decline in new words per daf. --DONE! 
--key word pickout -- Done!
--collapse all similar words into one (issue with this one)
--generate nice report at end 
--pull out all roshei teivos -- Done!
--twelve is the header text to remove when working with tzel harim -- DONE!
--just trim until two whitespaces -- done!
--how many unmatched words are left on the page
-----and what they are.
--add a range selector for the pages using a dropdownlist with only headers and 
-indexes.
-
-*/
